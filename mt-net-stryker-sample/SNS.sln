@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fix.main", "fix\main\fix.main.csproj", "{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fix.test", "fix\test\fix.test.csproj", "{63847530-EDD3-464F-A3DA-366D1C145B8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kata.main", "kata\main\kata.main.csproj", "{A91765F6-6017-4B62-B2DE-B76AD583D4C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kata.test", "kata\test\kata.test.csproj", "{BF3BF838-001A-4DAB-B248-8C426247DE0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		kata|Any CPU = kata|Any CPU
+		fixed|Any CPU = fixed|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}.kata|Any CPU.ActiveCfg = kata|Any CPU
+		{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}.fixed|Any CPU.ActiveCfg = fixed|Any CPU
+		{09C543BD-8E8C-4A41-AAF9-68A5840CDE08}.fixed|Any CPU.Build.0 = fixed|Any CPU
+		{63847530-EDD3-464F-A3DA-366D1C145B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63847530-EDD3-464F-A3DA-366D1C145B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63847530-EDD3-464F-A3DA-366D1C145B8C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{63847530-EDD3-464F-A3DA-366D1C145B8C}.kata|Any CPU.ActiveCfg = kata|Any CPU
+		{63847530-EDD3-464F-A3DA-366D1C145B8C}.fixed|Any CPU.ActiveCfg = fixed|Any CPU
+		{63847530-EDD3-464F-A3DA-366D1C145B8C}.fixed|Any CPU.Build.0 = fixed|Any CPU
+		{A91765F6-6017-4B62-B2DE-B76AD583D4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A91765F6-6017-4B62-B2DE-B76AD583D4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A91765F6-6017-4B62-B2DE-B76AD583D4C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A91765F6-6017-4B62-B2DE-B76AD583D4C3}.kata|Any CPU.ActiveCfg = kata|Any CPU
+		{A91765F6-6017-4B62-B2DE-B76AD583D4C3}.kata|Any CPU.Build.0 = kata|Any CPU
+		{A91765F6-6017-4B62-B2DE-B76AD583D4C3}.fixed|Any CPU.ActiveCfg = fixed|Any CPU
+		{BF3BF838-001A-4DAB-B248-8C426247DE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF3BF838-001A-4DAB-B248-8C426247DE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF3BF838-001A-4DAB-B248-8C426247DE0B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BF3BF838-001A-4DAB-B248-8C426247DE0B}.kata|Any CPU.ActiveCfg = kata|Any CPU
+		{BF3BF838-001A-4DAB-B248-8C426247DE0B}.kata|Any CPU.Build.0 = kata|Any CPU
+		{BF3BF838-001A-4DAB-B248-8C426247DE0B}.fixed|Any CPU.ActiveCfg = fixed|Any CPU
+	EndGlobalSection
+EndGlobal

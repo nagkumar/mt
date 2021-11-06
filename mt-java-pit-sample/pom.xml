@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns="http://maven.apache.org/POM/4.0.0"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>mutation.test</groupId>
+    <artifactId>mutate</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+	<module>kata</module>
+	<module>fix</module>
+    </modules>
+
+    <properties>
+	<jvm.options>-Xshare:off</jvm.options>
+	<junit.version>4.13.2</junit.version>
+	<mockito.version>3.12.4</mockito.version>
+	<pitest.version>1.7.0</pitest.version>
+    </properties>
+
+    <dependencies>
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>${junit.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-core</artifactId>
+	    <version>${mockito.version}</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-inline</artifactId>
+	    <version>${mockito.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.pitest</groupId>
+	    <artifactId>pitest-maven</artifactId>
+	    <version>${pitest.version}</version>
+	    <type>maven-plugin</type>
+	</dependency>
+    </dependencies>
+
+    <build>
+	<plugins>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>3.8.0</version>
+		<configuration>
+		    <release>8</release>
+		    <verbose>true</verbose>
+		    <compilerArgs>
+			<arg>-Xlint:all,-options,-path</arg>
+		    </compilerArgs>
+		</configuration>
+	    </plugin>
+	</plugins>
+    </build>
+
+    <profiles>
+	<profile>
+	    <id>pitest</id>
+	    <build>
+		<plugins>
+		    <plugin>
+			<groupId>org.pitest</groupId>
+			<artifactId>pitest-maven</artifactId>
+			<version>${pitest.version}</version>
+			<executions>
+			    <execution>
+				<id>pitest</id>
+				<phase>test</phase>
+				<goals>
+				    <goal>mutationCoverage</goal>
+				</goals>
+			    </execution>
+			</executions>
+			<configuration>
+			    <targetClasses>
+				<param>${project.artifactId}.domain.*</param>
+			    </targetClasses>
+			    <targetTests>
+				<param>${project.artifactId}.domain.tests.*</param>
+			    </targetTests>
+			    <mutators>
+				<mutator>DEFAULTS</mutator>
+				<!--<mutator>ALL</mutator>-->
+			    </mutators>
+			</configuration>
+		    </plugin>
+		</plugins>
+	    </build>
+	</profile>
+    </profiles>
+</project>

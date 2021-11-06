@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="kata" type="PIT" factoryName="PIT Runner" REPORT_DIR="G:\DWork\MT\mutate-test-kata\kata\target\pit-reports" SOURCE_DIRS="G:\DWork\MT\mutate-test-kata\kata\src\main\java" TARGET_CLASSES="kata.domain.*" TARGET_TESTS="kata.domain.tests.*" otherParams="--outputFormats XML,HTML -mutators DEFAULTS">
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

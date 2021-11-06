@@ -1,0 +1,62 @@
+# Striker.Net Sample
+
+[![Azure DevOps builds (job)](https://img.shields.io/azure-devops/build/raschmitt/7618d927-8467-43e2-b5e9-1aeddc1fbfdc/30?label=Build%20%26%20Test&style=flat-square)](https://dev.azure.com/raschmitt/raschmitt/_build?definitionId=30)
+[![Sonar Coverage](https://img.shields.io/sonar/coverage/raschmitt_stryker-net-sample?label=Code%20Coverage&server=https%3A%2F%2Fsonarcloud.io&style=flat-square)](https://sonarcloud.io/dashboard?id=raschmitt_stryker-net-sample)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fraschmitt%2Fstryker-net-sample%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master)
+
+This is a sample project that demonstrates how [Stryker .Net](https://github.com/stryker-mutator/stryker-net) can be used to run mutation tests in .Net Core, if you are looking for more information on Stryker itself or what mutation tests can do for you, please refer to their [official website](https://stryker-mutator.io/).
+
+## Project Dependencies 
+
+- [.Net Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/)
+
+## Local Run
+
+After cloning this repository the first thing to be done is to install Stryker globally:
+
+```
+dotnet tool uninstall -g dotnet-stryker
+dotnet tool install --global dotnet-stryker --version 0.22.11
+```
+
+Then go to the tests folder location: 
+
+```
+cd <repository location>\[kata] or [fix] \test
+
+cd G:\DWork\MT\stryker-net-sample\kata\test 
+or 
+G:\DWork\MT\stryker-net-sample\fix\test
+```
+
+And run the mutation tests:
+
+```
+dotnet stryker
+```
+
+1. kataMT.bat
+2. fixMT.bat
+
+After Stryker is done it will display your mutation score and the complete html report location. 
+
+![Console reporter](https://i.imgur.com/CpCurCL.png "Console reporter")
+
+## Continuous Integartion
+
+- [Sample pipeline workflow](https://dev.azure.com/raschmitt/raschmitt/_git/pipeline-templates?path=%2Fsteps%2Fmutation_tests%2Fstryker_csharp.yml)
+
+The sample workflow file shows how to easily integrate mutation tests through Stryker into a continuous integration strategy and publish results to its dashboard.
+
+This workflow is automatically run every day, and the latest results can be found [here](https://dashboard.stryker-mutator.io/reports/github.com/raschmitt/stryker-net-sample/master).
+
+In IDE  open and run these files as Unit Tests
+
+1. AccountTest
+2. AccountTestFixed
+
+Show the Code Coverage UI against each of the test cases
+
+
+
+

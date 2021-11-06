@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <LangVersion>default</LangVersion>
+        <Nullable>enable</Nullable>
+        <Configurations>Debug;Release;kata;fixed</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.1.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+        <PackageReference Include="xunit" Version="2.4.2-pre.12" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.1.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\main\fix.main.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="StrykerOutput\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="StrykerOutput\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="StrykerOutput\**" />
+        <None Remove="fixMT.bat" />
+    </ItemGroup>
+</Project>
